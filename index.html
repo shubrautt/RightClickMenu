@@ -1,80 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Right Click Event</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<body>
+  <body>
     <div id="container" class="container">
-        <div class="menu" id="menu">
-            <button class="btn" id="btn"><i class="fa-solid fa-xmark"></i></button>
-            <a href="#Home" class="links">Home</a>
-            <a href="#About" class="links">About</a>
-            <a href="#Services" class="links">Services</a>
-            <a href="#Contact" class="links">Contact</a>
-        </div>
-        <div id="Home" class="box">Home</div>
-        <div id="About" class="box">About</div>
-        <div id="Services" class="box">Services</div>
-        <div id="Contact" class="box">Contact</div>
-        <div class="overlay" id="overlay"></div>
+      <div class="menu" id="menu">
+        <button class="btn" id="btn"><i class="fa-solid fa-xmark"></i></button>
+        <a href="#Home" class="links">Home</a>
+        <a href="#About" class="links">About</a>
+        <a href="#Services" class="links">Services</a>
+        <a href="#Contact" class="links">Contact</a>
+      </div>
+      <div id="Home" class="box">Home</div>
+      <div id="About" class="box">About</div>
+      <div id="Services" class="box">Services</div>
+      <div id="Contact" class="box">Contact</div>
+      <div class="overlay" id="overlay"></div>
     </div>
 
-
-    <script>
-        const container = document.getElementById("container");
-        const btn = document.getElementById("btn");
-        const links = document.querySelectorAll(".links");
-
-        container.addEventListener('contextmenu', e => {
-            e.preventDefault()
-            e.preventDefault()
-            const menu = document.getElementById("menu");
-            const overlay = document.getElementById("overlay");
-
-            overlay.style.display = "block";
-            menu.style.display = "flex";
-            menu.style.opacity = "1";
-            menu.style.transform = `translate(${e.clientX}px, ${e.clientY}px) scale(1)`;
-        });
-        container.addEventListener('contextmenu', handleClick);
-        btn.addEventListener("click", handleClick);
-        links.forEach(e => {
-            e.addEventListener("click", handleClick);
-        })
-
-        // function hide(e) {
-        //     console.log(e.which)
-        //     const menu = document.getElementById("menu");
-        //     const overlay = document.getElementById("overlay");
-        //     overlay.style.display = "none";
-        //     menu.style.display = "none";
-        // }
-
-
-        function handleClick(e) {
-            const menu = document.getElementById("menu");
-            const overlay = document.getElementById("overlay");
-            if (e.which === 3) {
-                e.preventDefault()
-                overlay.style.display = "block";
-                menu.style.display = "flex";
-                menu.style.opacity = "1";
-                menu.style.transform = `translate(${e.clientX}px, ${e.clientY}px) scale(1)`;
-            } else if (e.which === 1) {
-                overlay.style.display = "none";
-                menu.style.display = "none";
-            }
-        }
-    </script>
-</body>
-
+    <script src="new.js"></script>
+  </body>
 </html>
